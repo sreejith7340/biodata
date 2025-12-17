@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sreejith S | Biodata</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            width: 100vw;
+            margin: 0;
+            transition: background 0.3s;
+        }
+        body.dark {
+            background: #121212;
+        }
+        .card {
+            background: #ffffff;
+            width: 100%;
+            min-height: 100vh;
+            border-radius: 0;
+            overflow: hidden;
+            transition: background 0.3s, color 0.3s;
+        }
+        body.dark .card {
+            background: #1e1e1e;
+            color: #f1f1f1;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #350564);
+            color: white;
+            text-align: center;
+            padding: 30px 20px 60px;
+            position: relative;
+        }
+        .toggle-btn, .download-btn {
+            position: absolute;
+            top: 15px;
+            padding: 8px 14px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .toggle-btn {
+            left: 15px;
+            background: #ffffff;
+            color: #000;
+        }
+        .download-btn {
+            right: 15px;
+            background: #00e676;
+            color: #000;
+        }
+        .header img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .content {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+        .section {
+            background: #f9f9f9;
+            border-radius: 12px;
+            padding: 20px;
+        }
+        body.dark .section {
+            background: #2a2a2a;
+        }
+        .section h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #2a5298;
+        }
+        body.dark .section h2 {
+            color: #90caf9;
+        }
+        .skills span {
+            display: inline-block;
+            background: #2a5298;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin: 5px 5px 0 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background: #f1f1f1;
+            font-size: 13px;
+        }
+        body.dark .footer {
+            background: #1a1a1a;
+        }
+        @media print {
+            .toggle-btn, .download-btn {
+                display: none;
+            }
+            body {
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <button class="toggle-btn" onclick="toggleTheme()">🌙 Dark Mode</button>
+            <button class="download-btn" onclick="downloadPDF()">⬇ Download PDF</button>
+            <!-- Replace src with your photo -->
+            <img src="photo.jpg" alt="Passport Size Photo">
+            <h1>Sreejith S</h1>
+            <p>B.Tech Computer Science Student</p>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>Personal Details</h2>
+                <ul>
+                    <li><span class="label">Register No:</span> KGR23CS109</li>
+                    <li><span class="label">Date of Birth:</span> 02/02/2006</li>
+                    <li><span class="label">Gender:</span> Male</li>
+                    <li><span class="label">Blood Group:</span> B+</li>
+                    <li><span class="label">Nationality:</span> Indian</li>
+                    <li><span class="label">Languages:</span> English, Malayalam, Hindi</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Academic Details</h2>
+                <ul>
+                    <li><span class="label">Course:</span> B.Tech</li>
+                    <li><span class="label">Branch:</span> Computer Science</li>
+                    <li><span class="label">Institution:</span> College of Engineering Kidangoor</li>
+                    <li><span class="label">University:</span> KTU</li>
+                    <li><span class="label">Year:</span> Third Year</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Contact Details</h2>
+                <ul>
+                    <li><span class="label">Address:</span> Sreenilayam (H), Ayarkunnam P.O, Kottayam</li>
+                    <li><span class="label">Phone:</span> +91 7736840475</li>
+                    <li><span class="label">Email:</span> sreejithsaji36@email.com</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Skills & Interests</h2>
+                <div class="skills">
+                    <span>C</span>
+                    <span>Java</span>
+                    <span>Python</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Reading</span>
+                    <span>Sports</span>
+                    <span>Music</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            © 2025 Sreejith S | Student Biodata Website
+        </div>
+    </div>
+<script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark');
+            const btn = document.querySelector('.toggle-btn');
+            btn.textContent = document.body.classList.contains('dark') ? '☀ Light Mode' : '🌙 Dark Mode';
+        }
+        function downloadPDF() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
